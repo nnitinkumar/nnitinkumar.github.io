@@ -6,40 +6,520 @@
 -->
 <html>
 	<head>
-		<title>Nitin Kumar</title>
+		<title>Nitin Kumar - Senior Data Scientist</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Senior Data Scientist with 7+ years of experience building advanced analytics solutions for Fortune 100 companies like Walmart, Tesco, and Suncorp." />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Enhanced styling for the portfolio */
+			#main {
+				max-width: 100%;
+				padding: 2rem;
+			}
+			
+			.section {
+				background: rgba(0, 0, 0, 0.75);
+				padding: 2rem;
+				margin: 2rem 0;
+				border-radius: 10px;
+				backdrop-filter: blur(10px);
+				display: none;
+				animation: fadeIn 0.5s ease-in;
+			}
+			
+			.section.active {
+				display: block;
+			}
+			
+			@keyframes fadeIn {
+				from { opacity: 0; transform: translateY(20px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+			
+			.nav-buttons {
+				display: flex;
+				justify-content: center;
+				gap: 1rem;
+				margin: 2rem 0;
+				flex-wrap: wrap;
+			}
+			
+			.nav-btn {
+				background: rgba(255, 255, 255, 0.1);
+				color: white;
+				border: 2px solid rgba(255, 255, 255, 0.3);
+				padding: 0.8rem 1.5rem;
+				border-radius: 25px;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				text-decoration: none;
+				font-size: 0.9rem;
+				backdrop-filter: blur(5px);
+			}
+			
+			.nav-btn:hover, .nav-btn.active {
+				background: rgba(255, 255, 255, 0.2);
+				border-color: rgba(255, 255, 255, 0.8);
+				transform: translateY(-2px);
+			}
+			
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1.5rem;
+				margin: 1.5rem 0;
+			}
+			
+			.skill-category {
+				background: rgba(255, 255, 255, 0.1);
+				padding: 1.5rem;
+				border-radius: 8px;
+				border-left: 4px solid #00d4ff;
+			}
+			
+			.skill-category h4 {
+				color: #00d4ff;
+				margin-bottom: 1rem;
+				font-size: 1.1rem;
+			}
+			
+			.skill-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+			}
+			
+			.skill-tag {
+				background: rgba(0, 212, 255, 0.2);
+				color: white;
+				padding: 0.3rem 0.8rem;
+				border-radius: 15px;
+				font-size: 0.8rem;
+				border: 1px solid rgba(0, 212, 255, 0.3);
+			}
+			
+			.experience-item {
+				background: rgba(255, 255, 255, 0.05);
+				padding: 1.5rem;
+				margin: 1rem 0;
+				border-radius: 8px;
+				border-left: 4px solid #00d4ff;
+			}
+			
+			.experience-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				margin-bottom: 1rem;
+			}
+			
+			.experience-title {
+				color: #00d4ff;
+				font-size: 1.2rem;
+				margin: 0;
+			}
+			
+			.experience-company {
+				color: #ccc;
+				font-size: 1rem;
+				margin: 0.2rem 0;
+			}
+			
+			.experience-date {
+				color: #999;
+				font-size: 0.9rem;
+				text-align: right;
+			}
+			
+			.experience-highlights {
+				list-style: none;
+				padding: 0;
+			}
+			
+			.experience-highlights li {
+				margin: 0.8rem 0;
+				padding-left: 1.5rem;
+				position: relative;
+			}
+			
+			.experience-highlights li:before {
+				content: "▶";
+				color: #00d4ff;
+				position: absolute;
+				left: 0;
+			}
+			
+			.contact-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1rem;
+				margin: 2rem 0;
+			}
+			
+			.contact-item {
+				background: rgba(255, 255, 255, 0.1);
+				padding: 1rem;
+				border-radius: 8px;
+				text-align: center;
+				transition: all 0.3s ease;
+			}
+			
+			.contact-item:hover {
+				background: rgba(255, 255, 255, 0.2);
+				transform: translateY(-2px);
+			}
+			
+			.contact-item i {
+				font-size: 2rem;
+				color: #00d4ff;
+				margin-bottom: 0.5rem;
+			}
+			
+			.achievements {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 1rem;
+				margin: 1.5rem 0;
+			}
+			
+			.achievement-card {
+				background: rgba(0, 212, 255, 0.1);
+				padding: 1.5rem;
+				border-radius: 8px;
+				border: 1px solid rgba(0, 212, 255, 0.3);
+			}
+			
+			.achievement-icon {
+				font-size: 2rem;
+				color: #00d4ff;
+				margin-bottom: 1rem;
+			}
+			
+			@media (max-width: 768px) {
+				.nav-buttons {
+					flex-direction: column;
+					align-items: center;
+				}
+				
+				.experience-header {
+					flex-direction: column;
+					align-items: flex-start;
+				}
+				
+				.experience-date {
+					text-align: left;
+					margin-top: 0.5rem;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
 			<div id="bg"></div>
 			<div id="overlay"></div>
 			<div id="main">
-
 				<!-- Header -->
-					<header id="header">
-						<h1>Nitin Kumar</h1>
-						<p>Data Scientist </p>
-						<nav>
-							<ul>
-								<li><a href="https://www.linkedin.com/in/nitinkumarnitin/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-								<li><a href="https://github.com/nnitinkumar" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="mailto:nitin710kumar@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-						</nav>
-					</header>
+				<header id="header">
+					<h1>Nitin Kumar</h1>
+					<p>Senior Data Scientist & Machine Learning Engineer</p>
+					<p style="font-size: 0.9rem; color: #ccc;">7+ Years | Fortune 100 Experience | Advanced Analytics Leader</p>
+					<nav>
+						<ul>
+							<li><a href="https://www.linkedin.com/in/nitinkumarnitin/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/nnitinkumar" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
+							<li><a href="https://kaggle.com/ninitinkumar" class="icon brands fa-kaggle" target="_blank"><span class="label">Kaggle</span></a></li>
+							<li><a href="https://medium.com/@nitin710kumar" class="icon brands fa-medium" target="_blank"><span class="label">Medium</span></a></li>
+							<li><a href="mailto:nitin710kumar@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							<li><a href="tel:+919179900360" class="icon solid fa-phone"><span class="label">Phone</span></a></li>
+						</ul>
+					</nav>
+				</header>
+
+				<!-- Navigation -->
+				<div class="nav-buttons">
+					<a href="#" class="nav-btn active" onclick="showSection('about')">About</a>
+					<a href="#" class="nav-btn" onclick="showSection('experience')">Experience</a>
+					<a href="#" class="nav-btn" onclick="showSection('skills')">Skills</a>
+					<a href="#" class="nav-btn" onclick="showSection('achievements')">Achievements</a>
+					<a href="#" class="nav-btn" onclick="showSection('contact')">Contact</a>
+				</div>
+
+				<!-- About Section -->
+				<div id="about" class="section active">
+					<h2 style="color: #00d4ff; text-align: center; margin-bottom: 2rem;">About Me</h2>
+					<p style="font-size: 1.1rem; line-height: 1.6; text-align: center; max-width: 800px; margin: 0 auto;">
+						I'm a <strong>Senior Data Scientist</strong> with over <strong>7 years of experience</strong> building advanced analytical tools 
+						and machine learning solutions for <strong>Fortune 100 companies</strong> including Walmart, Suncorp, and Tesco. 
+						I specialize in combining hands-on technical expertise in data science and machine learning with proven management capabilities.
+					</p>
+					
+					<div style="text-align: center; margin: 2rem 0;">
+						<h3 style="color: #00d4ff;">What I Do</h3>
+						<div class="achievements">
+							<div class="achievement-card">
+								<div class="achievement-icon">🎯</div>
+								<h4>Demand Forecasting</h4>
+								<p>Built end-to-end frameworks processing market data with ARIMA models and XGBoost integration</p>
+							</div>
+							<div class="achievement-card">
+								<div class="achievement-icon">👥</div>
+								<h4>Customer Analytics</h4>
+								<p>Delivered clustering models identifying high-value segments across UK, ROI & Central Europe</p>
+							</div>
+							<div class="achievement-card">
+								<div class="achievement-icon">🔍</div>
+								<h4>Competitive Intelligence</h4>
+								<p>Developed analytical frameworks with GPT integration for market dynamics analysis</p>
+							</div>
+							<div class="achievement-card">
+								<div class="achievement-icon">🛡️</div>
+								<h4>Behavioral Analytics</h4>
+								<p>Built systems tracking usage patterns and supporting security feature launches</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Experience Section -->
+				<div id="experience" class="section">
+					<h2 style="color: #00d4ff; text-align: center; margin-bottom: 2rem;">Professional Experience</h2>
+					
+					<div class="experience-item">
+						<div class="experience-header">
+							<div>
+								<h3 class="experience-title">Senior Data Scientist</h3>
+								<p class="experience-company">Tesco</p>
+							</div>
+							<div class="experience-date">April 2022 - Present</div>
+						</div>
+						<ul class="experience-highlights">
+							<li><strong>Demand Forecasting:</strong> Leveraged NLP techniques and vector databases to process textual data, combined with Decision Tree models for product demand analysis</li>
+							<li><strong>Competitor Analysis:</strong> Developed end-to-end analytical framework using XGBoost and GPT integration for market trends forecasting</li>
+							<li><strong>Customer Segmentation:</strong> Delivered clustering-based models identifying high-value customer segments across multiple regions</li>
+							<li><strong>Security Analytics:</strong> Built behavioral analytics system reducing theft and shrinkage through advanced pattern recognition</li>
+						</ul>
+					</div>
+
+					<div class="experience-item">
+						<div class="experience-header">
+							<div>
+								<h3 class="experience-title">Data Scientist</h3>
+								<p class="experience-company">Mu Sigma Inc</p>
+							</div>
+							<div class="experience-date">Dec 2018 - Mar 2022</div>
+						</div>
+						<ul class="experience-highlights">
+							<li><strong>Supply Chain Optimization:</strong> Implemented ARIMA family time series models reducing overstocking and logistics inefficiencies</li>
+							<li><strong>Pricing Analytics:</strong> Developed key metrics for home insurance segment with optimized SQL queries for data transformation</li>
+							<li><strong>Customer Analytics:</strong> Created targeting methodology for Fortune 100 insurance company using advanced clustering techniques</li>
+							<li><strong>Performance Analysis:</strong> Built comprehensive Tableau dashboards with multi-level performance metrics across subsidiaries</li>
+						</ul>
+					</div>
+
+					<div class="experience-item">
+						<div class="experience-header">
+							<div>
+								<h3 class="experience-title">Application Developer</h3>
+								<p class="experience-company">Accenture</p>
+							</div>
+							<div class="experience-date">Feb 2018 - Sep 2018</div>
+						</div>
+						<ul class="experience-highlights">
+							<li><strong>Web Development:</strong> Contributed to building optimization frameworks using Python for feed landing processes</li>
+							<li><strong>Process Optimization:</strong> Developed solutions improving system efficiency and user experience</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Skills Section -->
+				<div id="skills" class="section">
+					<h2 style="color: #00d4ff; text-align: center; margin-bottom: 2rem;">Technical Skills</h2>
+					
+					<div class="skills-grid">
+						<div class="skill-category">
+							<h4>Programming & Data Science</h4>
+							<div class="skill-tags">
+								<span class="skill-tag">Python</span>
+								<span class="skill-tag">Advanced SQL</span>
+								<span class="skill-tag">R</span>
+								<span class="skill-tag">NLP</span>
+								<span class="skill-tag">Vector Databases</span>
+							</div>
+						</div>
+						
+						<div class="skill-category">
+							<h4>Machine Learning & AI</h4>
+							<div class="skill-tags">
+								<span class="skill-tag">Linear Regression</span>
+								<span class="skill-tag">Logistic Regression</span>
+								<span class="skill-tag">Time Series</span>
+								<span class="skill-tag">KNN</span>
+								<span class="skill-tag">K-Means</span>
+								<span class="skill-tag">Decision Tree</span>
+								<span class="skill-tag">Random Forest</span>
+								<span class="skill-tag">XGBoost</span>
+								<span class="skill-tag">NLP</span>
+								<span class="skill-tag">GenAI</span>
+								<span class="skill-tag">LLMs</span>
+								<span class="skill-tag">TensorFlow</span>
+								<span class="skill-tag">A/B Testing</span>
+							</div>
+						</div>
+						
+						<div class="skill-category">
+							<h4>Tools & Platforms</h4>
+							<div class="skill-tags">
+								<span class="skill-tag">AWS</span>
+								<span class="skill-tag">CI/CD</span>
+								<span class="skill-tag">GitHub</span>
+								<span class="skill-tag">Snowflake</span>
+								<span class="skill-tag">MS SQL Server</span>
+								<span class="skill-tag">MS Excel</span>
+								<span class="skill-tag">Alteryx</span>
+								<span class="skill-tag">Figma</span>
+							</div>
+						</div>
+						
+						<div class="skill-category">
+							<h4>Visualization</h4>
+							<div class="skill-tags">
+								<span class="skill-tag">Tableau</span>
+								<span class="skill-tag">Power BI</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Achievements Section -->
+				<div id="achievements" class="section">
+					<h2 style="color: #00d4ff; text-align: center; margin-bottom: 2rem;">Key Achievements</h2>
+					
+					<div class="achievements">
+						<div class="achievement-card">
+							<div class="achievement-icon">📈</div>
+							<h4>Demand Forecasting Excellence</h4>
+							<p>Reduced overstocking inefficiencies through advanced ARIMA time series modeling at Mu Sigma, directly impacting supply chain optimization for Fortune 100 clients.</p>
+						</div>
+						
+						<div class="achievement-card">
+							<div class="achievement-icon">🎯</div>
+							<h4>Customer Segmentation Impact</h4>
+							<p>Delivered high-value customer segmentation models across UK, ROI & Central Europe at Tesco, enabling targeted marketing strategies and improved ROI.</p>
+						</div>
+						
+						<div class="achievement-card">
+							<div class="achievement-icon">🤖</div>
+							<h4>AI Integration Leadership</h4>
+							<p>Successfully integrated GPT technology with traditional analytics frameworks, creating next-generation market intelligence solutions for competitive analysis.</p>
+						</div>
+						
+						<div class="achievement-card">
+							<div class="achievement-icon">🛡️</div>
+							<h4>Security Analytics Innovation</h4>
+							<p>Developed behavioral analytics system for theft reduction, supporting the launch of Civil Recovery & Intel Sharing features for Tesco's internal applications.</p>
+						</div>
+						
+						<div class="achievement-card">
+							<div class="achievement-icon">💰</div>
+							<h4>Pricing Strategy Optimization</h4>
+							<p>Created comprehensive analytics platform for home insurance segment at Mu Sigma, establishing single source of truth for performance metrics and KPIs.</p>
+						</div>
+						
+						<div class="achievement-card">
+							<div class="achievement-icon">☁️</div>
+							<h4>Cloud Infrastructure Expertise</h4>
+							<p>Successfully deployed multiple ML models to AWS cloud infrastructure, ensuring scalability and reliability for enterprise-level data science solutions.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Contact Section -->
+				<div id="contact" class="section">
+					<h2 style="color: #00d4ff; text-align: center; margin-bottom: 2rem;">Get In Touch</h2>
+					
+					<p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">
+						Looking for a Senior Data Scientist to drive your analytics initiatives? Let's connect and discuss how I can help transform your data into actionable insights.
+					</p>
+					
+					<div class="contact-grid">
+						<a href="mailto:nitin710kumar@gmail.com" class="contact-item">
+							<i class="fas fa-envelope"></i>
+							<h4>Email</h4>
+							<p>nitin710kumar@gmail.com</p>
+						</a>
+						
+						<a href="tel:+919179900360" class="contact-item">
+							<i class="fas fa-phone"></i>
+							<h4>Phone</h4>
+							<p>+91-9179900360</p>
+						</a>
+						
+						<a href="https://www.linkedin.com/in/nitinkumarnitin/" target="_blank" class="contact-item">
+							<i class="fab fa-linkedin"></i>
+							<h4>LinkedIn</h4>
+							<p>Connect professionally</p>
+						</a>
+						
+						<a href="https://github.com/nnitinkumar" target="_blank" class="contact-item">
+							<i class="fab fa-github"></i>
+							<h4>GitHub</h4>
+							<p>View my projects</p>
+						</a>
+						
+						<a href="https://kaggle.com/ninitinkumar" target="_blank" class="contact-item">
+							<i class="fab fa-kaggle"></i>
+							<h4>Kaggle</h4>
+							<p>Data science competitions</p>
+						</a>
+						
+						<a href="https://medium.com/@nitin710kumar" target="_blank" class="contact-item">
+							<i class="fab fa-medium"></i>
+							<h4>Medium</h4>
+							<p>Read my articles</p>
+						</a>
+					</div>
+					
+					<div style="text-align: center; margin-top: 2rem;">
+						<p style="color: #ccc;">
+							<strong>Current Focus:</strong> Generative AI Integration | MLOps | Real-time Analytics | Advanced Forecasting
+						</p>
+					</div>
+				</div>
 
 				<!-- Footer -->
-				<!--	<footer id="footer">
-						<span class="copyright">&copy; Untitled. Design: <a href="Nitin">HTML5 UP</a>.</span>
-					</footer>
-				-->
+				<footer id="footer" style="margin-top: 3rem;">
+					<span class="copyright" style="color: #666;">&copy; 2025 Nitin Kumar. Senior Data Scientist & Analytics Leader.</span>
+				</footer>
 			</div>
 		</div>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
+			function showSection(sectionName) {
+				// Hide all sections
+				const sections = document.querySelectorAll('.section');
+				sections.forEach(section => {
+					section.classList.remove('active');
+				});
+				
+				// Remove active class from all nav buttons
+				const navButtons = document.querySelectorAll('.nav-btn');
+				navButtons.forEach(btn => {
+					btn.classList.remove('active');
+				});
+				
+				// Show selected section
+				document.getElementById(sectionName).classList.add('active');
+				
+				// Add active class to clicked button
+				event.target.classList.add('active');
+			}
+			
+			window.onload = function() { 
+				document.body.classList.remove('is-preload'); 
+			}
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
 		</script>
